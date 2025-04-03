@@ -209,31 +209,31 @@ void writeExpressionsToFile() {
 	FILE* inputFile = fopen("input.txt", "w");
 
 	if (!inputFile) {
-		printf("Ошибка открытия файла input.txt\n");
+		printf("ГЋГёГЁГЎГЄГ  Г®ГІГЄГ°Г»ГІГЁГї ГґГ Г©Г«Г  input.txt\n");
 		return;
 	}
 
 	char expression[256];
-	printf("Введите выражения (для завершения введите 'exit'):\n");
+	printf("Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г°Г Г¦ГҐГ­ГЁГї (Г¤Г«Гї Г§Г ГўГҐГ°ГёГҐГ­ГЁГї ГўГўГҐГ¤ГЁГІГҐ 'exit'):\n");
 
 	while (1) {
-		fgets(expression, sizeof(expression), stdin); // Читаем строку из стандартного ввода
+		fgets(expression, sizeof(expression), stdin); 
 
-		// Удаляем символ новой строки, если он есть
+		
 		size_t len = strlen(expression);
 		if (len > 0 && expression[len - 1] == '\n') {
 			expression[len - 1] = '\0';
 		}
 
-		if (strcmp(expression, "exit") == 0) { // Проверяем, введено ли "exit"
-			break; // Завершаем цикл, если введено "exit"
+		if (strcmp(expression, "exit") == 0) { 
+			break; 
 		}
 
-		fprintf(inputFile, "%s\n", expression); // Записываем выражение в файл
+		fprintf(inputFile, "%s\n", expression); 
 	}
 
-	fclose(inputFile); // Закрываем файл
-	printf("Выражения записаны в файл input.txt\n");
+	fclose(inputFile); 
+	printf("Г‚Г»Г°Г Г¦ГҐГ­ГЁГї Г§Г ГЇГЁГ±Г Г­Г» Гў ГґГ Г©Г« input.txt\n");
 }
 
 void printFile(const char* filename) {
@@ -243,7 +243,7 @@ void printFile(const char* filename) {
 		exit(EXIT_FAILURE);
 	}
 
-	puts("Содержимое файла:");
+	puts("Г‘Г®Г¤ГҐГ°Г¦ГЁГ¬Г®ГҐ ГґГ Г©Г«Г :");
 	char ch;
 	while ((ch = fgetc(file)) != EOF) {
 		putchar(ch);
